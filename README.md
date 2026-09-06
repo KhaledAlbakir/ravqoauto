@@ -1,15 +1,5 @@
-# RAVQO Auto
-
-نسخة أولية مجانية لموقع RAVQO Auto، جاهزة للنشر على GitHub Pages.
-
-## الملفات
-- `index.html` الصفحة الرئيسية
-- `styles.css` التصميم
-- `script.js` السيارات والقطع والمنتجات
-
-## تعديل المنتجات
-افتح `script.js` وعدّل قائمة `products`.
-
-## التواصل
-- WhatsApp: 0592901998
-- Email: Mr.khaledb1@gmail.com
+RAVQO Auto Final Bilingual
+- Brand cards corrected to: Chevrolet, Dodge, Ford, Hyundai, Toyota.
+- Arabic/English switch at the top.
+- Product: Camaro Carbon Fiber Hood, 7,500 SAR.
+- Ready for GitHub Pages.

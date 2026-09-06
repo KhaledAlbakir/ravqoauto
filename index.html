@@ -1,166 +1,117 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RAVQO Auto - قطع سيارات مختارة لسيارات شيفروليه، دودج، فورد، هيونداي وتويوتا." />
-  <title>RAVQO Auto | قطع سيارات</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAVQO Auto | Car Parts</title>
+<meta name="description" content="RAVQO Auto - Chevrolet, Dodge, Ford, Hyundai and Toyota car parts.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="RAVQO Auto">
-        <span class="brand-mark">R</span>
-        <span>
-          <strong>RAVQO</strong>
-          <small>AUTO PARTS</small>
-        </span>
-      </a>
-      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
-      <nav id="mainNav">
-        <a href="#home">الرئيسية</a>
-        <a href="#brands">السيارات</a>
-        <a href="#parts">القطع</a>
-        <a href="#products">منتجات</a>
-        <a href="#contact">تواصل</a>
-      </nav>
-      <a class="nav-cta" href="https://wa.me/966592901998" target="_blank" rel="noopener">واتساب</a>
+<div class="topbar">
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="ar">العربية</button>
+    <button class="lang-btn" data-lang="en">English</button>
+  </div>
+  <div data-i18n="top_message">مرحباً بك في RAVQO Auto — قطع غيار أصلية، أداء يعتمد عليه</div>
+  <div>SAR</div>
+</div>
+
+<header class="wrap header">
+  <a class="logo" href="index.html">RAVQO<small>AUTO</small></a>
+  <div class="search">
+    <input id="searchInput" data-i18n-placeholder="search_placeholder" placeholder="ابحث عن قطع غيار، موديل، أو رقم القطعة ...">
+    <button id="searchBtn">⌕</button>
+  </div>
+  <div class="actions">
+    <span data-i18n="wishlist">♡ المفضلة</span>
+    <span data-i18n="cart">🛒 سلة المشتريات</span> <b>0</b>
+  </div>
+</header>
+
+<nav><div class="wrap nav">
+  <a class="active" href="#home" data-i18n="nav_home">الرئيسية</a>
+  <a href="#parts" data-i18n="nav_parts">قطع الغيار</a>
+  <a href="#cars" data-i18n="nav_vehicle">حسب السيارة</a>
+  <a href="#brands" data-i18n="nav_brands">الماركات</a>
+  <a href="#offers" data-i18n="nav_deals">العروض</a>
+  <a href="#services" data-i18n="nav_services">خدماتنا</a>
+  <a href="#contact" data-i18n="nav_contact">تواصل معنا</a>
+</div></nav>
+
+<main id="home">
+<section class="hero">
+  <div class="heroShade"></div>
+  <div class="wrap heroInner">
+    <div class="heroCopy">
+      <h1><span data-i18n="hero_line1">قطع غيار أصلية</span><br><em data-i18n="hero_line2">لأداء أقوى</em></h1>
+      <p>ORIGINAL PARTS. HIGHER PERFORMANCE.</p>
+      <a class="cta" href="#parts" data-i18n="shop_now">تسوق الآن ←</a>
     </div>
-  </header>
+    <div class="heroBadge">CAMARO<small>LEGEND LIVES ON</small></div>
+  </div>
+</section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">RAVQO AUTO PARTS</span>
-          <h1>ابحث عن قطع سيارتك<br><span>بشكل أسرع وأسهل</span></h1>
-          <p>اختر الشركة، الموديل، ونوع القطعة للوصول بسرعة لما تحتاجه. الموقع جاهز الآن كنسخة أولية ويمكنك تعديل المنتجات والأسعار لاحقًا.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#finder">ابدأ البحث</a>
-            <a class="btn secondary" href="https://wa.me/966592901998" target="_blank" rel="noopener">تواصل واتساب</a>
-          </div>
-          <div class="trust-row">
-            <span>✓ واجهة عربية</span>
-            <span>✓ متوافق مع الجوال</span>
-            <span>✓ طلب مباشر عبر واتساب</span>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="car-stage">
-            <div class="car-silhouette">RAVQO</div>
-            <div class="stage-label">AUTO PARTS</div>
-          </div>
-        </div>
-      </div>
-    </section>
+<section id="brands" class="wrap section">
+  <div class="carsGrid">
+    <article class="carCard"><img src="assets/chevrolet.jpg"><h3>CHEVROLET</h3><p data-i18n="genuine_parts">قطع أصلية</p><a href="#parts" data-brand="Chevrolet" data-i18n="shop_chevrolet">تسوق شيفروليه</a></article>
+    <article class="carCard"><img src="assets/dodge.jpg"><h3>DODGE</h3><p data-i18n="genuine_parts">قطع أصلية</p><a href="#parts" data-brand="Dodge" data-i18n="shop_dodge">تسوق دودج</a></article>
+    <article class="carCard"><img src="assets/ford.jpg"><h3>FORD</h3><p data-i18n="genuine_parts">قطع أصلية</p><a href="#parts" data-brand="Ford" data-i18n="shop_ford">تسوق فورد</a></article>
+    <article class="carCard"><img src="assets/hyundai.jpg"><h3>HYUNDAI</h3><p data-i18n="genuine_parts">قطع أصلية</p><a href="#parts" data-brand="Hyundai" data-i18n="shop_hyundai">تسوق هيونداي</a></article>
+    <article class="carCard"><img src="assets/toyota.jpg"><h3>TOYOTA</h3><p data-i18n="genuine_parts">قطع أصلية</p><a href="#parts" data-brand="Toyota" data-i18n="shop_toyota">تسوق تويوتا</a></article>
+  </div>
+</section>
 
-    <section class="finder-section" id="finder">
-      <div class="container">
-        <div class="finder-card">
-          <div>
-            <span class="eyebrow">ابحث عن سيارتك</span>
-            <h2>اختر السيارة والقطعة</h2>
-          </div>
-          <div class="finder-grid">
-            <label>
-              <span>الشركة</span>
-              <select id="brandSelect">
-                <option value="">اختر الشركة</option>
-              </select>
-            </label>
-            <label>
-              <span>الموديل</span>
-              <select id="modelSelect" disabled>
-                <option value="">اختر الموديل</option>
-              </select>
-            </label>
-            <label>
-              <span>نوع القطعة</span>
-              <select id="partSelect">
-                <option value="">اختر القطعة</option>
-              </select>
-            </label>
-            <button class="btn primary search-btn" id="searchBtn">عرض النتائج</button>
-          </div>
-          <p class="finder-result" id="finderResult">اختر بيانات سيارتك للبدء.</p>
-        </div>
-      </div>
-    </section>
+<section id="parts" class="wrap section">
+  <h2 class="sectionTitle" data-i18n="shop_by_category">تصفح حسب فئة القطعة</h2>
+  <div class="cats">
+    <button data-part="brakes">◉<span data-i18n="cat_brakes">فرامل</span></button>
+    <button data-part="filters">▤<span data-i18n="cat_filters">فلاتر</span></button>
+    <button data-part="lighting">◈<span data-i18n="cat_lighting">إضاءة</span></button>
+    <button data-part="suspension">⇵<span data-i18n="cat_suspension">مساعدات</span></button>
+    <button data-part="engine">⚙<span data-i18n="cat_engine">قطع المحرك</span></button>
+    <button data-part="body">▱<span data-i18n="cat_body">قطع الهيكل</span></button>
+    <button data-part="oil">◍<span data-i18n="cat_oil">زيوت وسوائل</span></button>
+    <button data-part="electrical">▣<span data-i18n="cat_electrical">قطع كهربائية</span></button>
+    <button data-part="accessories">✦<span data-i18n="cat_accessories">إكسسوارات</span></button>
+  </div>
 
-    <section class="section" id="brands">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">الشركات المتوفرة</span>
-            <h2>اختر ماركة سيارتك</h2>
-          </div>
-          <p>أضفنا الماركات التي طلبتها كبداية، ويمكن إضافة شركات أخرى لاحقًا.</p>
-        </div>
-        <div class="brand-grid" id="brandGrid"></div>
-      </div>
-    </section>
+  <div class="sectionHead">
+    <h2 data-i18n="featured_products">منتجات مميزة</h2>
+    <p data-i18n="featured_sub">منتجات مضافة للتجربة</p>
+  </div>
+  <div id="productGrid" class="products"></div>
+</section>
 
-    <section class="section alt" id="parts">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">أقسام القطع</span>
-            <h2>قطع مرتبة حسب النوع</h2>
-          </div>
-          <p>اختيارات مبدئية للعرض، ويمكنك استبدالها أو إضافة أقسام جديدة في أي وقت.</p>
-        </div>
-        <div class="parts-grid" id="partsGrid"></div>
-      </div>
-    </section>
+<section id="offers" class="wrap offers">
+  <div class="promo big" style="background-image:url('assets/promo-chevrolet.jpg')">
+    <div><h2 data-i18n="chevy_parts">قطع شيفروليه الأصلية</h2><p data-i18n="details_difference">التفاصيل تصنع الفرق</p><a class="cta small" href="#parts" data-i18n="shop_chevrolet">تسوق شيفروليه</a></div>
+  </div>
+  <div class="promoRow">
+    <div class="promo" style="background-image:url('assets/promo-brakes.jpg')"><div><h2 data-i18n="special_offers">عروض خاصة</h2><p data-i18n="selected_parts">على قطع مختارة</p></div></div>
+    <div class="promo" style="background-image:url('assets/promo-oil.jpg')"><div><h2 data-i18n="premium_oils">زيوت أصلية</h2><p data-i18n="longer_engine_life">لعمر أطول للمحرك</p></div></div>
+  </div>
+</section>
 
-    <section class="section" id="products">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <span class="eyebrow">منتجات تجريبية</span>
-            <h2>بعض القطع المضافة حاليًا</h2>
-          </div>
-          <p>الأسعار هنا تجريبية فقط إلى أن تضيف أسعارك الفعلية.</p>
-        </div>
-        <div class="products-grid" id="productsGrid"></div>
-      </div>
-    </section>
+<section id="services" class="services"><div class="wrap serviceGrid">
+  <div>🛡 <b data-i18n="service_genuine">قطع أصلية 100%</b><small data-i18n="service_quality">جودة مضمونة</small></div>
+  <div>🚚 <b data-i18n="service_shipping">شحن سريع</b><small data-i18n="service_shipping_sub">لجميع مناطق المملكة</small></div>
+  <div>🎧 <b data-i18n="service_support">دعم فني متخصص</b><small data-i18n="service_support_sub">نحن دائماً للمساعدة</small></div>
+  <div>💳 <b data-i18n="service_payment">دفع آمن</b><small data-i18n="service_payment_sub">خيارات متعددة وآمنة</small></div>
+</div></section>
+</main>
 
-    <section class="contact-section" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <span class="eyebrow light">تواصل معنا</span>
-          <h2>احتجت قطعة وما لقيتها؟</h2>
-          <p>أرسل لنا اسم السيارة، الموديل، سنة الصنع واسم القطعة، وسنرتب لك الطلب.</p>
-        </div>
-        <div class="contact-cards">
-          <a href="https://wa.me/966592901998" target="_blank" rel="noopener">
-            <strong>واتساب</strong>
-            <span dir="ltr">0592901998</span>
-          </a>
-          <a href="mailto:Mr.khaledb1@gmail.com">
-            <strong>البريد الإلكتروني</strong>
-            <span>Mr.khaledb1@gmail.com</span>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
+<footer id="contact">
+  <div class="wrap footerGrid">
+    <div><div class="logo">RAVQO<small>AUTO</small></div><p>DRIVE WITH CONFIDENCE</p></div>
+    <div><h4 data-i18n="quick_links">روابط سريعة</h4><a href="#home" data-i18n="nav_home">الرئيسية</a><a href="#parts" data-i18n="nav_parts">قطع الغيار</a><a href="#brands" data-i18n="nav_brands">الماركات</a><a href="#offers" data-i18n="nav_deals">العروض</a></div>
+    <div><h4 data-i18n="customer_services">خدمات العملاء</h4><span data-i18n="shipping_policy">سياسة الشحن</span><span data-i18n="returns">الاسترجاع والاستبدال</span><span data-i18n="terms">الشروط والأحكام</span><span data-i18n="faq">الأسئلة الشائعة</span></div>
+    <div><h4 data-i18n="contact_us">تواصل معنا</h4><a dir="ltr" href="tel:0592901998">0592901998</a><a href="mailto:Mr.khaledb1@gmail.com">Mr.khaledb1@gmail.com</a></div>
+  </div>
+  <div class="wrap copyright">© 2026 RAVQO Auto — All rights reserved.</div>
+</footer>
 
-  <footer>
-    <div class="container footer-wrap">
-      <div class="brand footer-brand">
-        <span class="brand-mark">R</span>
-        <span><strong>RAVQO</strong><small>AUTO PARTS</small></span>
-      </div>
-      <p>© <span id="year"></span> RAVQO Auto. جميع الحقوق محفوظة.</p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+<a class="whatsapp" target="_blank" href="https://wa.me/966592901998">☎</a>
+<script src="script.js"></script>
 </body>
 </html>

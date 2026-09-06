@@ -1,0 +1,39 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAVQO Auto | Car Parts</title><link rel="stylesheet" href="styles.css"></head><body>
+
+<div class="topbar">
+ <div class="lang-switch"><button class="lang-btn" data-lang="ar">العربية</button><button class="lang-btn" data-lang="en">English</button></div>
+ <div data-t="top">RAVQO Auto</div><div>SAR</div>
+</div>
+<header class="wrap header">
+ <a class="logo" href="index.html">RAVQO<small>AUTO</small></a>
+ <div class="search"><input data-t-placeholder="search" placeholder="Search ..."><button onclick="location.href='index.html#brands'">⌕</button></div>
+ <div class="actions">
+  <button class="actionBtn" data-open-wishlist><span data-t="wishlist">Wishlist</span><i class="badge" data-wish-count>0</i></button>
+  <button class="actionBtn" data-open-cart><span data-t="cart">Cart</span><i class="badge" data-cart-count>0</i></button>
+ </div>
+</header>
+<nav><div class="wrap nav"><a class="active" href="index.html" data-t="home">home</a><a class="" href="index.html#brands" data-t="brands">brands</a></div></nav>
+
+<main>
+<section class="hero"><div class="wrap heroInner"><div class="heroCopy"><h1>RAVQO Auto<br><span data-t="shop">تسوق الآن</span></h1><p>ORIGINAL PARTS. HIGHER PERFORMANCE.</p><a class="cta" href="#brands" data-t="shop">Shop Now</a></div><div class="heroBadge">CAMARO<small>LEGEND LIVES ON</small></div></div></section>
+<section id="brands" class="wrap section"><h2 class="sectionTitle" data-t="chooseBrand">Choose Your Car Brand</h2><p class="subtle" data-t="chooseBrandSub">Start with the brand</p><div id="brandsGrid" class="grid5"></div></section>
+</main>
+
+<footer id="contact"><div class="wrap footerGrid">
+ <div><div class="logo">RAVQO<small>AUTO</small></div><p>DRIVE WITH CONFIDENCE</p></div>
+ <div><b>RAVQO Auto</b><a href="index.html">Home</a><a href="index.html#brands">Brands</a></div>
+ <div><b>Customer Service</b><span>Shipping Policy</span><span>Return & Refund</span><span>Terms & Conditions</span></div>
+ <div><b>Contact</b><a dir="ltr" href="tel:0592901998">0592901998</a><a href="mailto:Mr.khaledb1@gmail.com">Mr.khaledb1@gmail.com</a></div>
+</div><div class="wrap copyright">© 2026 RAVQO Auto — All rights reserved.</div></footer>
+<div id="drawer" class="drawer" hidden><div class="drawerHead"><h3 id="drawerTitle"></h3><button class="darkBtn" data-close-drawer>✕</button></div><div id="drawerBody"></div></div>
+<a class="whatsapp" target="_blank" href="https://wa.me/966592901998">☎</a>
+
+<script src="data.js"></script><script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const g=document.getElementById('brandsGrid');
+ g.innerHTML=RAVQO_DATA.brands.map(b=>`<article class="brandCard"><img src="${b.image}"><div class="brandBody"><h3>${b.name}</h3><p>${lang==='ar'?'قطع غيار وموديلات الشركة':'Brand models and parts'}</p><a class="outlineBtn" href="brand.html?brand=${b.id}">${t('viewBrand')}</a></div></article>`).join('');
+});
+</script></body></html>

@@ -1,0 +1,61 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product | RAVQO Auto</title><link rel="stylesheet" href="styles.css"></head><body>
+
+<div class="topbar">
+ <div class="lang-switch"><button class="lang-btn" data-lang="ar">العربية</button><button class="lang-btn" data-lang="en">English</button></div>
+ <div data-t="top">RAVQO Auto</div><div>SAR</div>
+</div>
+<header class="wrap header">
+ <a class="logo" href="index.html">RAVQO<small>AUTO</small></a>
+ <div class="search"><input data-t-placeholder="search" placeholder="Search ..."><button onclick="location.href='index.html#brands'">⌕</button></div>
+ <div class="actions">
+  <button class="actionBtn" data-open-wishlist><span data-t="wishlist">Wishlist</span><i class="badge" data-wish-count>0</i></button>
+  <button class="actionBtn" data-open-cart><span data-t="cart">Cart</span><i class="badge" data-cart-count>0</i></button>
+ </div>
+</header>
+<nav><div class="wrap nav"><a class="" href="index.html" data-t="home">home</a><a class="active" href="index.html#brands" data-t="brands">brands</a></div></nav>
+
+<main class="wrap productPage">
+<div class="breadcrumbs"><a href="index.html" data-t="home">Home</a> ‹ <span id="productCrumb"></span></div>
+<section class="productHero">
+ <div class="gallery"><div id="thumbs" class="thumbs"></div><div class="mainImage"><img id="mainImage"></div></div>
+ <div class="productInfo">
+  <div id="productBrand" style="font-weight:900;font-size:22px;color:#ddd"></div>
+  <h1 id="productName"></h1><h2 id="productNameEn"></h2><p id="productDesc" class="desc"></p>
+  <div class="specs">
+   <div><small data-t="brand">Brand</small><b id="specBrand"></b></div>
+   <div><small data-t="model">Model</small><b id="specModel"></b></div>
+   <div><small data-t="category">Category</small><b id="specCategory"></b></div>
+   <div><small data-t="material">Material</small><b id="specMaterial"></b></div>
+  </div>
+  <div class="buyRow"><div class="priceBig"><strong id="productPrice"></strong><small style="display:block;color:#999" data-t="priceVat">VAT included</small></div>
+  <div class="qty"><button id="minus">−</button><span id="qty">1</span><button id="plus">+</button></div></div>
+  <div class="productActions"><button id="addCart" class="goldBtn" data-t="addCart">Add to Cart</button><button id="addWish" class="darkBtn" data-t="addWish">Add to Wishlist</button><a id="waLink" class="greenBtn" target="_blank" data-t="contactWhatsapp">WhatsApp</a></div>
+ </div>
+</section>
+</main>
+
+<footer id="contact"><div class="wrap footerGrid">
+ <div><div class="logo">RAVQO<small>AUTO</small></div><p>DRIVE WITH CONFIDENCE</p></div>
+ <div><b>RAVQO Auto</b><a href="index.html">Home</a><a href="index.html#brands">Brands</a></div>
+ <div><b>Customer Service</b><span>Shipping Policy</span><span>Return & Refund</span><span>Terms & Conditions</span></div>
+ <div><b>Contact</b><a dir="ltr" href="tel:0592901998">0592901998</a><a href="mailto:Mr.khaledb1@gmail.com">Mr.khaledb1@gmail.com</a></div>
+</div><div class="wrap copyright">© 2026 RAVQO Auto — All rights reserved.</div></footer>
+<div id="drawer" class="drawer" hidden><div class="drawerHead"><h3 id="drawerTitle"></h3><button class="darkBtn" data-close-drawer>✕</button></div><div id="drawerBody"></div></div>
+<a class="whatsapp" target="_blank" href="https://wa.me/966592901998">☎</a>
+
+<script src="data.js"></script><script src="app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const p=getProduct(qs('id'))||RAVQO_DATA.products[0], b=getBrand(p.brand), m=getModel(b,p.model);
+ document.title=(lang==='ar'?p.nameAr:p.nameEn)+' | RAVQO Auto'; document.getElementById('productCrumb').textContent=lang==='ar'?p.nameAr:p.nameEn;
+ document.getElementById('productBrand').textContent=b.name;document.getElementById('productName').textContent=lang==='ar'?p.nameAr:p.nameEn;document.getElementById('productNameEn').textContent=p.nameEn;
+ document.getElementById('productDesc').textContent=lang==='ar'?p.descAr:p.descEn;document.getElementById('specBrand').textContent=b.name;document.getElementById('specModel').textContent=m.name;document.getElementById('specCategory').textContent=catName(p.category);document.getElementById('specMaterial').textContent=lang==='ar'?p.materialAr:p.materialEn;document.getElementById('productPrice').textContent=money(p.price);
+ document.getElementById('mainImage').src=p.images[0];document.getElementById('thumbs').innerHTML=p.images.map((im,i)=>`<button class="thumb ${i===0?'active':''}" data-img="${im}"><img src="${im}"></button>`).join('');
+ document.querySelectorAll('.thumb').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));btn.classList.add('active');document.getElementById('mainImage').src=btn.dataset.img;});
+ let q=1;const qe=document.getElementById('qty');document.getElementById('plus').onclick=()=>qe.textContent=++q;document.getElementById('minus').onclick=()=>{if(q>1)q--;qe.textContent=q};
+ document.getElementById('addCart').onclick=()=>addToCart(p.id,q);document.getElementById('addWish').onclick=()=>addToWishlist(p.id);
+ document.getElementById('waLink').href='https://wa.me/966592901998?text='+encodeURIComponent((lang==='ar'?'السلام عليكم، أستفسر عن ':'Hello, I want to ask about ')+(lang==='ar'?p.nameAr:p.nameEn)+' - '+money(p.price));
+});
+</script></body></html>
